@@ -14,7 +14,8 @@ target = np.sort(data['label'].unique())
 print(target)
 
 #preprocessing the data
-X = data.drop(columns = 'label')    
+X = data.drop(columns = 'label')   
+X = X/255.0
 X_scaled = scale(X)
 
 X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, test_size = 0.20,  random_state = 10)
